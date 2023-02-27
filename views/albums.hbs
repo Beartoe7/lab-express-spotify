@@ -1,18 +1,10 @@
-  {{#each data}}
-
-  <div class="mb-3">
-  <button type="submit" class="btn btn-primary">View Albums</button>
-  <a href="/track-info/{{id}}">View Tracks</a>
-  </div>
-
-  {{/each}}
-
-{{!-- <h1>Albums</h1>
-<form action="/albums" method="POST">
-  <div class="mb-3">
-    <label for="titulo" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" name="name">
-    <label for="director" class="form-label">Cover</label>
-    <input type="text" class="form-control" id="cover" name="cover">
-     <button type="submit" class="btn btn-primary">Tracks</button>
-       <a href="/albums/tracks">View Tracks</a> --}}
+<div>
+    <h1>{{artistName}}</h1>
+    {{#each albums}}
+        <div>
+            Name: {{this.name}}
+            <img width="100" src={{this.images.[0].url}} alt="">
+            <a href="/view-tracks/{{this.id}}">View Tracks</a>
+        </div>
+    {{/each}}
+</div>
